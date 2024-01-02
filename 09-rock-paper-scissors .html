@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rock paper scissor </title>
+    </head>
+    <body>
+        <!--
+        <p>Rock Paper Scissors</p>
+        <button onclick="cheekFun('Rock')">Rock</button>
+        <button onclick="cheekFun('Paper')">paper</button>
+       <button onclick="cheekFun('scissor')">scissor</button>
+       -->
+       <p>Rock Paper Scissors</p>
+       <button onclick="
+       //alert('good ...');
+       cheekFun('Rock');
+       ">Rock</button>
+       <button onclick="
+      // alert('good ...');
+       cheekFun('paper');
+       //compMove();
+       ">paper</button>
+
+       <button onclick="
+      // console.log(compMove(computerMove));
+       //alert('good ...');
+       cheekFun('scissor');
+       ">scissor</button>
+       <p class="js-score-text" ></p>
+              <button onclick="
+              // console.log(compMove(computerMove));
+               //alert('good ...');
+              // cheekFun('scissor');
+              score.lost=0;
+              score.tie=0;
+              score.win=0;
+              localStorage.removeItem(score);
+              scoreDisplay();
+              alert('score reset !');
+               ">Reset</button>
+               <p class="test-class"></p>
+      
+    <script>
+      let result = '';
+      let choice='';
+        let computerMove = '';
+
+      //  let score =  {
+       //     win:  0,
+       //     lost:  0,
+       //     tie:  0
+       // };
+        
+       let score = JSON.parse(localStorage.getItem('score')) || {
+        win: 0,
+        lost: 0,
+        tie: 0
+      };
+      scoreDisplay();
+      for(i=1 ;i>0;i--)
+    compMove(); 
+       function cheekFun(choice)
+       {
+       // let computerMove = compMove();
+        if(choice === 'Rock')
+        {
+        if(computerMove === 'Rock')
+        {
+            result = 'tie';
+        }else if(computerMove === 'paper')
+        {
+            result = 'losses !';
+        } else if(computerMove === 'scissor')
+        {    result = 'win';
+        };
+        if(result === 'tie')
+        {score.tie += 1;}
+        if(result === 'losses')
+      {  score.lost+= 1;}
+
+        if(result === 'win')
+        {score.win+=1;}
+    
+       }
+       if(choice === 'paper')
+        {
+        if(computerMove === 'Rock')
+        {
+            result = 'win';
+        }else if (computerMove === 'paper')
+        {
+            result = 'tie';
+        } else if(computerMove === 'scissor')
+        {    result = 'losses';
+        };
+        if(result === 'tie')
+        score.tie += 1;
+        if(result === 'losses')
+        score.lost+= 1;
+        if(result === 'win')
+        score.win+=1;
+
+
+            }
+       if(choice === 'scissor')
+        {
+        if(computerMove === 'Rock')
+        {
+            result = 'losses';
+        }else if(computerMove === 'paper')
+        {
+            result = 'win';
+        } else if(computerMove === 'scissor')
+        {    result = 'tie';
+        };
+        if(result === 'tie')
+        score.tie += 1;
+        if(result === 'losses')
+        score.lost+= 1;
+        if(result === 'win')
+        score.win+=1;
+   // console.log(score);
+           
+//localStorage.setItem('score',JSON.stringify(score));
+}
+// localStorage.setItem('mes',score);
+//localStorage.setItem('mes',JSON.stringify(score));  
+localStorage.setItem('score',JSON.stringify(score));
+//alert(`computer move ${computerMove} and you select ${choice} and result ${result} 
+//win:${score.win} losse:${score.lost} tie: ${score.tie}`);  
+let scoreTextElement =document.body.querySelector('.js-score-text');
+scoreTextElement.innerHTML=` You  ${result} <br>
+You ${choice} - Computer ${computerMove} <br>  
+win:${score.win} losse:${score.lost} tie: ${score.tie}`;
+//scoreDisplay();
+//return choice;
+//score=JSON.parse(localStorage.getItem('score'));
+
+}
+let array=['kibr','infinity'];
+let test=document.body.querySelector('.test-class');
+
+for( n=0;n<2;n++)
+{test.innerHTML=`${array[n-1]} + ${array[n]}`};
+function scoreDisplay()
+{
+  let scoreTextElement =document.body.querySelector('.js-score-text');
+scoreTextElement.innerHTML=` You  ${result} <br>
+You ${choice} - Computer ${computerMove} <br>  
+win:${score.win} losse:${score.lost} tie: ${score.tie}`;
+} 
+    
+    
+function compMove()
+      { 
+        const randomNumber = Math.random();
+
+        if(randomNumber>=0 && randomNumber< 1/3)
+       {
+         computerMove = 'Rock';
+       }else if(randomNumber >= 1/3 && randomNumber < 2/3)
+       {
+         computerMove = 'paper';
+       }else if (randomNumber>=2/3 && randomNumber<1)
+       {  computerMove = 'scissor'}
+     //  alert(`computer move; ${computerMove}`); 
+     return computerMove;
+    }
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+    <body>
+        <script>
+/*
+        let product1 = {
+            name: 'laptop',
+            price: 2424 ,
+            id: 24 ,
+            ['product-version']: 'v8',
+            'product-exdate':  '2090',
+            rating: {
+                star: 4.5,
+                count: 78
+            },
+            fun: function newFun()
+            {
+                console.log('this is method which is function inside object ');
+            }
+        };
+        console.log(product1.fun());
+        console.log(product1.rating['star']);
+        console.log(product1['product-version']);
+        console.log(product1);
+        console.log(product1.id);
+        console.log(product1['name']);
+        console.log(product1['production-date']);
+        console.log(product1.rating.star)
+           product1.fun();
+       // console.log(product1.fun());
+        console.log(JSON.stringify(product1));
+        console.log(product1);
+        let jsonString = JSON.stringify(product1);  
+        
+        //console.log(JSON.parse(jsonString));
+*/
+// Auto boxing js automaticaly assume name as object it work for numbers and boleans but not for null and undefinde 
+    console.log('name'.length);
+    console.log('name'.toUpperCase());
+// objects are referances Ex.
+   let product1 = {
+    name: 'macbook',
+    id: 24,
+   }
+   product2=product1; //here product2 is just referance for data store on computer and when we give to product2 we just give the referance but the date only save once on memory
+   console.log(product1);
+   console.log(product2);
+   //lets see the above with Ex.
+   product1.amount=23;
+   console.log(product1);
+   //since the two object hase same memory addres referance refer the same memory location
+   console.log(product2);
+   // Since objects are referances we can not compare two object even though we have similar data Ex.
+   const product3={
+    name: 'macbook',
+    id: 24,
+    amount: 23,
+   };
+   console.log(product1 === product3); // it gives false 
+   // but here the two referance are the same so it give true
+  console.log(product1 === product2);
+  //Shortcuts for objects 
+  //we can write same value and propertyes like below
+  const product4 ={
+    message: 'message',
+  };
+  const {newmessage} =product4;
+  // product4 and product5 work just correct 
+  let product5 ={
+    newmessage,
+  //  methode: function newfun()
+  //  {
+  //  console.log('newfunction for destructring shortcut on object');
+  //  },
+  //we can write the above as
+  methode(){
+    console.log('newfunction for destructring shortcut on object');
+
+  }
+  };
+  console.log(product4);
+  console.log(product5);
+  //destructue shortcute to declear value
+  const product6={
+    name: 'name',
+  };
+  // const name=product6.name;
+  const {name}=product6;  // thise and the above are same we call it destructuring shorcut of object
+console.log(name);
+        </script>
+    </body>
+</html>

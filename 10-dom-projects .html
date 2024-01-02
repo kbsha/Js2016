@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom project</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .subscrib-button{
+            background-color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 30px;
+            cursor: pointer; 
+        
+        }
+        .is-subscribed{
+            background-color: bisque;
+            color: black;
+        }
+        .calculate-button{
+            background-color: green;
+            border: none;
+            padding: 12px  20px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+          cursor: pointer;
+            margin-top: 2px;
+        }
+        .cost-input{
+            padding: 10px 10px;
+            color: black;
+            font-size: 20px;
+            margin-right: 3px;
+            font-weight: bold;
+        }
+        
+
+    </style>
+    </head>
+
+    <body>
+        <p>YouYube Subscrib Button</p>
+        <button  onclick="
+        subFunction();
+        "
+        class="js-button subscrib-button " 
+        >Subscribe</button>
+        <p>Rock Paper scissors</p>
+        <a href="./09-rock-paper-scissors .html">Click Here</a>
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = + $10 shipping.</p>
+        <p>Orders over $40 = Free shipping.</p>
+        <input 
+        onkeydown="cal()"
+        class="js-cost-input cost-input" placeholder="cost of order">
+        <button class="calculate-button" onclick="
+        totalCost();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+        <script>
+            function cal(){
+                if(event.key==='Enter')
+                {
+                    totalCost();
+                }
+            }
+          
+          function totalCost()
+          {
+            let inputElement=document.body.querySelector('.js-cost-input');
+            let cost=inputElement.value;
+            let totalCostElement=document.body.querySelector('.js-total-cost');
+            cost=Number(cost);
+            if(cost<40)
+            {
+                cost=cost+10;
+            } 
+              totalCostElement.innerHTML=`$${cost}`;
+            }
+          
+          
+
+
+            
+
+            function subFunction(){
+        const buttonElement= document.body.querySelector('.js-button');
+        //if(buttonElement.innerHTML==='Subscribed')  // To make sure only comper the text in the Element with out considering space 
+        if(buttonElement.innerText==='Subscribe')
+        {
+            buttonElement.innerHTML='Subscribed';
+            buttonElement.classList.add('is-subscribed');
+        }else{
+            buttonElement.innerHTML='Subscribe';
+            buttonElement.classList.remove('is-subscribed');
+            
+        }
+            }
+
+
+
+        </script>
+    </body>
+    
+
+</html>

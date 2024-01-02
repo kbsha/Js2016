@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom project</title>
+    </head>
+    <body>
+        <p>YouYube Subscrib Button</p>
+        <button onclick="
+        subFunction();
+        "
+        class="js-button"
+        >Subscribe</button>
+        <p>Rock Paper scissors</p>
+        <a href="./09-rock-paper-scissors .html">Click Here</a>
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = + $10 shipping.</p>
+        <p>Orders over $40 = Free shipping.</p>
+        <input 
+        onkeydown="cal()"
+        class="js-cost-input" placeholder="cost of order">
+        <button onclick="
+        totalCost();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+        <script>
+            function cal(){
+                if(event.key==='Enter')
+                {
+                    totalCost();
+                }
+            }
+          
+          function totalCost()
+          {
+            let inputElement=document.body.querySelector('.js-cost-input');
+            let cost=inputElement.value;
+            let totalCostElement=document.body.querySelector('.js-total-cost');
+            cost=Number(cost);
+            if(cost<40)
+            {
+                cost=cost+10;
+            } 
+              totalCostElement.innerHTML=`$${cost}`;
+            }
+          
+          
+
+
+            
+
+            function subFunction(){
+        let buttonElement= document.body.querySelector('.js-button');
+        //if(buttonElement.innerHTML==='Subscribed')  // To make sure only comper the text in the Element with out considering space 
+        if(buttonElement.innerText==='Subscribed')
+        {
+            buttonElement.innerHTML='Subscribe'
+        }else{
+            buttonElement.innerHTML='Subscribed';
+        }
+            }
+
+
+
+        </script>
+    </body>
+    
+
+</html>
