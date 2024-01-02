@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rock paper scissor </title>
+    </head>
+    <link rel="stylesheet" href="css/10-rock-paper-sissors.css">
+    <body>
+        <!--
+        <p>Rock Paper Scissors</p>
+        <button onclick="cheekFun('Rock')">Rock</button>
+        <button onclick="cheekFun('Paper')">paper</button>
+       <button onclick="cheekFun('scissor')">scissor</button>
+       -->
+       <p>Rock Paper Scissors</p>
+       <button class="choice-button" onclick="
+       //alert('good ...');
+       cheekFun('Rock');
+       "><img class="move-icon" src="images/Rock-emoji.png"></button>
+       <button class="choice-button" onclick="
+      // alert('good ...');
+       cheekFun('paper');
+       //compMove();
+       "><img class="move-icon" src="images/paper-emoji.png"></button>
+
+       <button class="choice-button" onclick="
+      // console.log(compMove(computerMove));
+       //alert('good ...');
+       cheekFun('scissor');
+       "><img class="move-icon" src="images/scissor-emoji.png"></button>
+       <p class="js-result score-text" ></p>
+        <p class="js-score-text score-text"></p>     
+             <button class="reset-button" onclick="
+              // console.log(compMove(computerMove));
+               //alert('good ...');
+              // cheekFun('scissor');
+              score.lost=0;
+              score.tie=0;
+              score.win=0;
+              localStorage.removeItem(score);
+              scoreDisplay();
+              alert('score reset !');
+               ">Reset</button>
+               <p class="test-class"></p>
+      
+    <script src="scripts/10-rock-paper-scissors .js"></script>
+    </body>
+</html>
