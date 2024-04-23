@@ -18,4 +18,12 @@ function display(){
         break;
 
     }
-}
+    }
+    calculat();
+    function calculat(){
+        let number1 = prompt();
+        let number2 = prompt();
+        let sum=number1+number2;
+        alert('sum is '+sum);
+
+    }
